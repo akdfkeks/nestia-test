@@ -1,13 +1,7 @@
 import { TypedBody, TypedRoute } from '@nestia/core';
 import { Controller } from '@nestjs/common';
 import { AppService } from '../app.service';
-
-interface IHelloDto {
-  /**
-   * @format email
-   */
-  email: string;
-}
+import { IHelloDto } from 'src/structures/hello/Hello';
 
 @Controller()
 export class AppController {
@@ -19,7 +13,7 @@ export class AppController {
    */
   @TypedRoute.Post('hello')
   postHello(@TypedBody() dto: IHelloDto): string {
-    console.log('/hello');
+    console.log(dto);
     return dto.email;
   }
 }
