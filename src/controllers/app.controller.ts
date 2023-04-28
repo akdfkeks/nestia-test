@@ -11,7 +11,7 @@ export class AppController {
    * Hello swagger
    * @param dto
    */
-  @TypedRoute.Post('hello')
+  @TypedRoute.Post('/hello')
   postHello(@TypedBody() dto: IHelloDto): string {
     console.log(dto);
     return dto.email;
